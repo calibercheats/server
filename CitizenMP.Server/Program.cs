@@ -36,9 +36,9 @@ namespace CitizenMP.Server
                     config.Downloads = new Dictionary<string, DownloadConfiguration>();
                 }
 
-                if(config.Players > 50)
+                if(config.Players > 50 || config.Players < 0)
                 {
-                    this.Log().Fatal("A lot of players.");
+                    this.Log().Fatal("Invalid count of players.");
                     return;
                 }
             }
